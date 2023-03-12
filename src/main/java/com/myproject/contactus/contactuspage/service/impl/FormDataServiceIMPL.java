@@ -44,7 +44,7 @@ public class FormDataServiceIMPL implements FormDataService {
                 body
         );
 
-        if (isSentEmail){
+        if (isSentEmail) {
             // Generate property id
             String generatedId = generator.generatePropertyId(10);
 
@@ -61,13 +61,28 @@ public class FormDataServiceIMPL implements FormDataService {
 
             formDataRepo.save(formData);
 
+            // Send user details to the official email.
+            String userFullData = "<h2>New user send contact details.</h2>" +
+                    "<p>User Id: " + generatedId + "</p>" +
+                    "<p>userName: " + formDataRequestDTO.getUserName() + "</p>" +
+                    "<p>email: " + formDataRequestDTO.getEmail() + "</p>" +
+                    "<p>phoneNumber: " + formDataRequestDTO.getPhoneNumber() + "</p>" +
+                    "<p>subject: " + formDataRequestDTO.getSubject() + "</p>" +
+                    "<p>message: " + formDataRequestDTO.getMessage() + "</p>";
+
+            emailService.createEmail(
+                    "official.onideyak@gmail.com",
+                    "User Contact Details",
+                    userFullData
+            );
+
             return new CommonResponseDTO(
                     200,
                     "Details Saved!",
                     "We will contact you"
             );
 
-        }else {
+        } else {
             throw new ServerErrorException("Your contact data didn't submitted!");
         }
     }
