@@ -109,7 +109,7 @@ public class HtmlContent {
                 "                <h1>Thank you!</h1>\n" +
                 "            <p>for contacting us, we will reply promptly</p>\n" +
                 "            <p>once your message is received. </p>\n" +
-                "            <button class=\"go-home\"><a href=\"#\">\n" +
+                "            <button class=\"go-home\"><a href=\"https://github.com/AyeshDil\">\n" +
                 "                home page</a>\n" +
                 "            </button>\n" +
                 "        </div>\n" +
