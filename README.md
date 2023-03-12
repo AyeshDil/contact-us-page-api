@@ -6,11 +6,11 @@ POST Request => localhost:8081/api/v1/form-data/save
 
 JSON Request Body =>
 <p>
-{<br>
-    &nbsp;"userName":"User name",<br>
-    &nbsp;"email":"user Email",<br>
-    &nbsp;"phoneNumber":"077 XXXXXXX",<br>
-    &nbsp;"subject":"subject of user contact",<br>
-   &nbsp;"message":"User message"<br>
-}
+{</p>
+    <p>"userName":"User name",</p>
+    <p>"email":"user Email",</p>
+    <p>"phoneNumber":"077 XXXXXXX",</p>
+    <p>"subject":"subject of user contact",</p>
+   <p>"message":"User message"</p>
+<p>}
 </p>
