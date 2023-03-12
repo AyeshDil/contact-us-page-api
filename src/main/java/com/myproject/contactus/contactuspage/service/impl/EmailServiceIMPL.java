@@ -4,6 +4,7 @@ import com.myproject.contactus.contactuspage.exception.MailMessagingException;
 import com.myproject.contactus.contactuspage.service.EmailService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.core.io.FileSystemResource;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Component;
@@ -25,7 +26,6 @@ public class EmailServiceIMPL implements EmailService {
         this.javaMailSender = javaMailSender;
     }
 
-
     @Override
     public boolean createEmail(String to, String subject, String body) {
         // create Email
@@ -45,7 +45,5 @@ public class EmailServiceIMPL implements EmailService {
         } catch (MessagingException e) {
             throw new MailMessagingException("Mail not sent");
         }
-
-
     }
 }
